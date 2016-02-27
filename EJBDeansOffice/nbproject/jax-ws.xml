@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="GroupWS">
+      <implementation-class>ua.karazin.math.deansoffice.ws.GroupWS</implementation-class>
+    </service>
+    <service name="StudentWS">
+      <implementation-class>ua.karazin.math.deansoffice.ws.StudentWS</implementation-class>
+    </service>
+    <service name="CurriculumWS">
+      <implementation-class>ua.karazin.math.deansoffice.ws.CurriculumWS</implementation-class>
+    </service>
+    <service name="TeacherWS">
+      <implementation-class>ua.karazin.math.deansoffice.ws.TeacherWS</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

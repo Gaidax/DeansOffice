@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Class-Path: lib/velocity-1.7.jar lib/itextpdf-5.4.1.jar lib\commons-collections-3.2.1.jar lib\commons-lang-2.4.jar

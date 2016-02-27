@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+        body {
+            padding: 10px;
+            font-family: Verdana;
+        }
+        @page {  size: 30in; }
+        h1 {
+            font-family: Verdana;
+            text-align: right;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 100%;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        table {
+            border: 1px solid gray;
+            width: 100%;
+            border-collapse: separate;
+        }
+
+        caption {
+            border: 1px solid gray;
+        }
+
+        td, th {
+            border: 0px solid black;
+            text-align: right;
+        }
+        
+        th{
+		font-family:'Times New Roman';
+	}
+
+        td.desc, th {
+            text-align: left;
+        }
+
+        td.odd {
+            background-color: #ccccff;
+        }
+
+        td.even {
+            background-color: #D8D8D8;
+        }
+
+        th{
+            background-color:#A0A0A0;
+        }
+
+        tr.totals td.total {
+            background-color: #ccccff;
+        }
+
+        table#overview td {
+            border: 1px solid gray;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>Студенты</caption>
+    <thead>
+        <tr>
+            <th style="text-align: left;">ID</th>
+            <th style="text-align: right;">Имя</th>
+            <th style="text-align: right;">Фамилия</th>
+            <th style="text-align: right;">Отчество</th>
+            <th style="text-align: right;">День Рождения</th>
+            <th style="text-align: right;">Семейный статус</th>
+            <th style="text-align: right;">Регистрационный адрес</th>
+            <th style="text-align: right;">Текущий адрес</th>
+            <th style="text-align: right;">Телефон</th>
+            <th style="text-align: right;">Информация о родителях</th>
+            <th style="text-align: right;">Идентификационный код</th>
+            <th style="text-align: right;">Номер читательского билета</th>
+            <th style="text-align: right;">Email</th>
+            <th style="text-align: right;">Номер паспорта</th>
+            <th style="text-align: right;">Гражданство</th>
+            <th style="text-align: right;">Среднее образование</th>
+        </tr>
+    </thead>
+    <tfoot>
+    <tr class="totals">
+        <td class="total" colspan="18"></td>
+    </tr>
+    </tfoot>
+    <tbody>
+    #foreach($item in $StudList)
+    <tr>
+        <td class="odd">$item.getID()</td>
+        <td class="even">$item.getFirstName()</td>
+        <td class="odd">$item.getSecondName()</td>
+        <td class="even">$item.getLastName()</td>
+        <td class="odd">$item.getBirthday()</td>
+        <td class="even">$item.getMaritalStatus()</td>
+        <td class="odd">$item.getRegistrationAdress()</td>
+        <td class="even">$item.getCurrentAdress()</td>
+        <td class="odd">$item.getPhone()</td>
+        <td class="even">$item.getParentsInfo()</td>
+        <td class="odd">$item.getIDCCode()</td>
+        <td class="even">$item.getLibNumber()</td>
+        <td class="odd">$item.getE_mail()</td>
+        <td class="even">$item.getPassportNum()</td>
+        <td class="odd">$item.getCitizenship()</td>
+        <td class="even">$item.getPreviousEducation()</td>
+    </tr>
+        #end
+    </tbody>
+</table>
+</body>
+</html>

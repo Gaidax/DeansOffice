@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+        body {
+           
+            font-family: Verdana;
+            font-size:65%
+        }
+        @page {  size: A4; margin: 1px; }
+        h1 {
+            font-family: Verdana;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        h2 {
+            font-weight: normal;
+            text-align: center;
+            font-size: 200%
+        }
+div.upper{
+    text-transform: uppercase;
+    }
+    .bigger{
+    font-size: 13pt;
+    }
+    
+.table-header-rotated {
+  border-collapse: collapse;
+  .csstransforms &amp; td {
+    width: 30px;
+  }
+
+  td {
+    text-align: center;
+    padding: 10px 5px;
+    border: 1px solid #ccc;
+  }
+
+    </style>
+</head>
+<body>
+<h2>Харківський Національний Університет імені В.Н. Каразина</h2>
+<div class="bigger">
+<div style="text-align: left">Факультет:&nbsp;Механіко-математичний</div>
+<div style="text-align: left">Группа:&nbsp;$StateList.get(0).getGroupName()</div>
+<br></br>
+<div style="text-align: left">$StateList.get(0).getYear()&nbsp;учбовий рік</div>
+<div style="text-align: left">Курс:&nbsp;$StateList.get(0).getCourse()</div>
+</div>
+<h1>Заліково-Екзаменаційна Відомість №$StateList.get(0).getSheetNum()</h1>
+<div class="bigger">
+з $StateList.get(0).getSubject()
+<br></br>
+за &nbsp;$StateList.get(0).getSemestr()&nbsp;навчальний семестр.&nbsp;&nbsp;Залік___________
+<br></br>
+Викладач, що виставив підсумкову оцінку: $StateList.get(0).getDegree() $StateList.get(0).getTeacherLastName() $StateList.get(0).getTeacherName()
+<br></br>
+Викладачі, які ставили результати поточного контролю:_____________________________
+<br> </br>
+<br> </br>
+</div>
+<table border="1">
+<tr>
+<td rowspan="2">№</td>
+<td rowspan="2">Призвище, ініціали</td>
+<td rowspan="2">№ індівідул. навчальн. плану</td>
+<td colspan="4">Поточний контроль(бали)</td>
+<td rowspan = "2">Кількість балів за результ. підсумк. контролю</td>
+<td rowspan = "2">Загальна кількість балів</td>
+<td rowspan = "2">Підсумкова оцінка за нац. шкалою або відмітка про складання заліку</td>
+<td rowspan = "2">Оцінка за шкалою ECTS</td>
+<td rowspan = "2">Підпис викладача, 
+    який виставив підсумкову оцінку</td>
+</tr>
+
+
+<tr>
+<td><div><span>Модуль№1</span></div></td>
+<td><div><span>Модуль№2</span></div></td>
+<td><div><span>Модуль№3</span></div></td>
+<td><div><span>Модуль№4</span></div></td>
+</tr>
+
+#foreach($item in $StateList)
+<tr>
+<td>$item.getID()</td>
+<td><div style="float: left;"><div class="upper">$item.getLastName()</div>$item.getFirstName() $item.getSecondName()</div></td>
+<td>$item.getPlan()</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+#end
+</table>
+<br></br>
+
+<div class="bigger">
+<span>Студентів у групі $StudNum </span> <span style="margin: 10px">Відмінно________</span> <span style="margin: 16px">А_________</span>
+<br></br>
+<span>Не допущено___________</span><span style="margin-left: 14px">Добре________</span><span style="margin-left:42px">B_________</span>
+<br></br>
+<span>Не з'яилось___________</span><span style="margin: 21px">Задовільно________</span><span style="margin-left: -3px">C_________</span>
+<br></br>
+<span>Присутні___________</span><span style="margin: 34px">Незадовільно________</span><span style="margin-left: -25px">D_________</span>
+
+<br></br>
+<br></br>
+Декан Г.М. Жолткевич&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Викладачі______________________
+<br></br>
+___________
+<br></br>
+$StateList.get(0).getDate()
+</div>
+</body>
+</html>
